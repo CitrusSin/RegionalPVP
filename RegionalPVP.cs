@@ -71,14 +71,7 @@ namespace RegionalPVP
 
         private void OnPlayerAllowedToDamagePlayer(Player instigator, Player victim, ref bool allowed)
         {
-            if (CanPvP(instigator.transform.position) && CanPvP(victim.transform.position))
-            {
-                allowed = true;
-            }
-            else
-            {
-                allowed = false;
-            }
+            allowed = CanPvP(instigator.transform.position) && CanPvP(victim.transform.position);
         }
 
         private void OnPlayerConnected(UnturnedPlayer player)
